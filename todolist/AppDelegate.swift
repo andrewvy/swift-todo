@@ -45,5 +45,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+	static var clientIsInit: dispatch_once_t = 0
+	override init() {
+		// Client throws a fit if it's "init" more than once
+		// Fix this once we make Client a non-singleton
+		dispatch_once(&AppDelegate.clientIsInit) {
+			Client.initWithConfig(ClientConfig(
+				version: Config.version,
+				scheme: Config.scheme,
+				host: Config.host))
+		}
+	}
 }
 

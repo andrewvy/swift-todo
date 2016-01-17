@@ -1,0 +1,16 @@
+//
+//  Config.swift.example
+//  todolist
+//
+//  Created by Andrew Vy on 1/17/16.
+//  Copyright © 2016 Andrew Vy. All rights reserved.
+//
+
+import Foundation
+
+
+struct Config {
+    static let host = ""
+    static let version = ""
+    static let scheme = ""
+}
