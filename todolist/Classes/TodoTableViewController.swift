@@ -23,7 +23,6 @@ class TodoTableViewController: UITableViewController {
         let todoCreationController = TodoCreationController(title: "New Todo", message: "Add a new item", preferredStyle: .Alert)
         todoCreationController.delegate = self
         
-        
         presentViewController(todoCreationController, animated: true, completion: nil)
     }
 

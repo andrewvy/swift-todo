@@ -55,8 +55,6 @@ public final class Client {
             "Authorization": self.sharedInstance.jwtToken
         ]
 
-        return Alamofire.request(method, url, headers: headers, parameters: parameters).responseJSON { response in
-            return response;
-        }
+        return Alamofire.request(method, url, headers: headers, parameters: parameters)
     }
 }
