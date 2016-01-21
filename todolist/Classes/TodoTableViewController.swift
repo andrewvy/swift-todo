@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TodoTableViewController: UITableViewController {
+class TodoTableViewController: UITableViewController, TodoCreationDelegate {
     var dataProvider: TodoTableDataProvider?
     
     override func viewDidLoad() {

@@ -8,9 +8,13 @@
 
 import UIKit
 
+protocol TodoCreationDelegate {
+    func finishAddTodo(text: String?)
+}
+
 class TodoCreationController: UIAlertController {
     var inputTextField: UITextField?
-    var delegate: TodoTableViewController?
+    var delegate: TodoCreationDelegate?
 
     override func viewDidLoad() {
         self.addTextFieldWithConfigurationHandler(configureLabel)
