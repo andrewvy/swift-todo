@@ -10,7 +10,7 @@ import UIKit
 
 class TodoTableViewController: UITableViewController, TodoCreationDelegate {
     var dataProvider: TodoTableDataProvider?
-    
+
     override func viewDidLoad() {
         let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "addTodo")
         let editButton = UIBarButtonItem(barButtonSystemItem: .Edit, target: self, action: "didToggleEditMode")
@@ -22,11 +22,21 @@ class TodoTableViewController: UITableViewController, TodoCreationDelegate {
         dataProvider?.registerCellsForTableView(tableView)
     }
 
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        guard let todo = dataProvider?.todoForIndexPath(indexPath) else { return }
+
+        let detailedViewController = TodoDetailedViewController(todo: todo)
+
+        navigationController?.pushViewController(detailedViewController, animated: true)
+    }
+
     func didToggleEditMode () {
         setEditing(!editing, animated: true)
     }
 
     func addTodo() {
+        setEditing(false, animated: true)
+
         let todoCreationController = TodoCreationController(title: "New Todo", message: "Add a new item", preferredStyle: .Alert)
         todoCreationController.delegate = self
         

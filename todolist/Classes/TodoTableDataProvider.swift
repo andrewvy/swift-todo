@@ -33,6 +33,10 @@ class TodoTableDataProvider: NSObject, UITableViewDataSource {
         todos.removeAtIndex(indexPath.row)
         tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
     }
+
+    func todoForIndexPath(indexPath: NSIndexPath) -> Todo {
+        return todos[indexPath.row]
+    }
 }
 
 extension TodoTableDataProvider {
