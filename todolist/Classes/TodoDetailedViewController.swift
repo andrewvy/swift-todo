@@ -11,6 +11,7 @@ import UIKit
 class TodoDetailedViewController: UIViewController {
     var todo: Todo
     var label = UILabel()
+    var todoLabel = UILabel()
 
     init(todo: Todo) {
         self.todo = todo
@@ -25,11 +26,16 @@ class TodoDetailedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        label.text = todo.label
-        label.frame = CGRect(x: 50, y: 50, width: 150, height: 150)
-        label.font = UIFont(name: "HelveticaNeue-Bold", size: 36.0)
+        label.text = "Todo:"
+        label.frame = CGRect(x: 10, y: 20, width: 150, height: 150)
+        label.font = UIFont(name: "HelveticaNeue", size: 36.0)
+
+        todoLabel.text = todo.label
+        todoLabel.frame = CGRect(x: 10, y: 65, width: 150, height: 150)
+        todoLabel.font = UIFont(name: "HelveticaNeue", size: 12.0)
 
         view.addSubview(label)
+        view.addSubview(todoLabel)
         view.backgroundColor = UIColor.whiteColor()
     }
 }
