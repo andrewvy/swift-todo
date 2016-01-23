@@ -13,10 +13,17 @@ class TodoTableViewController: UITableViewController, TodoCreationDelegate {
     
     override func viewDidLoad() {
         let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "addTodo")
+        let editButton = UIBarButtonItem(barButtonSystemItem: .Edit, target: self, action: "didToggleEditMode")
+
+        navigationItem.leftBarButtonItem = editButton
         navigationItem.rightBarButtonItem = addButton
 
         tableView.dataSource = dataProvider
         dataProvider?.registerCellsForTableView(tableView)
+    }
+
+    func didToggleEditMode () {
+        setEditing(!editing, animated: true)
     }
 
     func addTodo() {
@@ -27,7 +34,7 @@ class TodoTableViewController: UITableViewController, TodoCreationDelegate {
     }
 
     func finishAddTodo(label: String?) {
-        self.dataProvider?.addTodo(Todo(label: label!))
-        self.tableView.reloadData()
+        dataProvider?.addTodo(Todo(label: label!))
+        tableView.reloadData()
     }
 }

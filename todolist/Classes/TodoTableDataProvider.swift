@@ -28,6 +28,11 @@ class TodoTableDataProvider: NSObject, UITableViewDataSource {
         
         return cell
     }
+
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        todos.removeAtIndex(indexPath.row)
+        tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+    }
 }
 
 extension TodoTableDataProvider {
