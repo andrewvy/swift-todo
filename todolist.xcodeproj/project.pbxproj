@@ -21,6 +21,9 @@
 		CC7FA3451C4D5134002E8CAB /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7FA3441C4D5134002E8CAB /* Todo.swift */; };
 		CC7FA3471C4D5146002E8CAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC7FA3461C4D5146002E8CAB /* Assets.xcassets */; };
 		CC7FA3491C4D5154002E8CAB /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CC7FA3481C4D5154002E8CAB /* Info.plist */; };
+		CC9D8E0D1C57067300FBD56B /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC9D8E0C1C57067300FBD56B /* Cartography.framework */; };
+		CC9D8E0E1C57069B00FBD56B /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC9D8E0C1C57067300FBD56B /* Cartography.framework */; };
+		CC9D8E0F1C57069B00FBD56B /* Cartography.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CC9D8E0C1C57067300FBD56B /* Cartography.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CC9EE77F1C5304FB0004856C /* TodoDetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9EE77E1C5304FB0004856C /* TodoDetailedViewController.swift */; };
 		CCE8D6AC1C4AD89200036048 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCE8D6AA1C4AD89200036048 /* LaunchScreen.storyboard */; };
 		CCE8D6B71C4AD89200036048 /* todolistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE8D6B61C4AD89200036048 /* todolistTests.swift */; };
@@ -52,6 +55,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				CC27679E1C4C555800348F41 /* Alamofire.framework in Embed Frameworks */,
+				CC9D8E0F1C57069B00FBD56B /* Cartography.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -72,6 +76,7 @@
 		CC7FA3441C4D5134002E8CAB /* Todo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Todo.swift; path = Classes/Models/Todo.swift; sourceTree = "<group>"; };
 		CC7FA3461C4D5146002E8CAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Resources/Assets.xcassets; sourceTree = "<group>"; };
 		CC7FA3481C4D5154002E8CAB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Supporting Files/Info.plist"; sourceTree = "<group>"; };
+		CC9D8E0C1C57067300FBD56B /* Cartography.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cartography.framework; path = Carthage/Build/iOS/Cartography.framework; sourceTree = "<group>"; };
 		CC9EE77E1C5304FB0004856C /* TodoDetailedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TodoDetailedViewController.swift; path = Classes/TodoDetailedViewController.swift; sourceTree = "<group>"; };
 		CCE8D69C1C4AD89200036048 /* todolist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = todolist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCE8D6AB1C4AD89200036048 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -89,6 +94,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC27679D1C4C555800348F41 /* Alamofire.framework in Frameworks */,
+				CC9D8E0D1C57067300FBD56B /* Cartography.framework in Frameworks */,
+				CC9D8E0E1C57069B00FBD56B /* Cartography.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +119,7 @@
 		CC30360F1C4B4504006DFFE4 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				CC9D8E0C1C57067300FBD56B /* Cartography.framework */,
 				CC27679B1C4C406000348F41 /* Alamofire.framework */,
 			);
 			name = Framework;

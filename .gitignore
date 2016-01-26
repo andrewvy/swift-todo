@@ -23,7 +23,7 @@ DerivedData
 # Carthage
 #
 # Add this line if you want to avoid checking in source code from Carthage dependencies.
-# Carthage/Build
+Carthage/Build
 Carthage/Build/watchOS
 Carthage/Build/Mac
 Carthage/Checkouts
