@@ -25,7 +25,7 @@ class TodoTableDataProvider: NSObject, UITableViewDataSource {
         let todo = todos[indexPath.row]
         
         cell.textLabel?.text = todo.label
-        
+
         return cell
     }
 

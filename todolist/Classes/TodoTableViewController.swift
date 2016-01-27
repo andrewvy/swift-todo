@@ -18,13 +18,25 @@ class TodoTableViewController: UITableViewController, TodoCreationDelegate {
         navigationItem.leftBarButtonItem = editButton
         navigationItem.rightBarButtonItem = addButton
 
+        tableView.allowsMultipleSelectionDuringEditing = true
         tableView.dataSource = dataProvider
         dataProvider?.registerCellsForTableView(tableView)
     }
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        guard let todo = dataProvider?.todoForIndexPath(indexPath) else { return }
+        if (tableView.editing) {
+            selectedWhileEditing(tableView, indexPath: indexPath)
+        } else {
+            selectedWhileNotEditing(tableView, indexPath: indexPath)
+        }
+    }
 
+    func selectedWhileEditing(tableView: UITableView, indexPath: NSIndexPath) {
+        // Do stuff
+    }
+
+    func selectedWhileNotEditing(tableView: UITableView, indexPath: NSIndexPath) {
+        guard let todo = dataProvider?.todoForIndexPath(indexPath) else { return }
         let detailedViewController = TodoDetailedViewController(todo: todo)
 
         navigationController?.pushViewController(detailedViewController, animated: true)
